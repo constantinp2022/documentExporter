@@ -1,0 +1,10 @@
+{% extends "main_website/base.html" %}
+{% block content %}
+<a class="nav-item nav-link" href="{% url 'add-employee' %}">Adaugare angajat</a>
+<a class="nav-item nav-link" href="{% url 'view-employee' %}">Vezi angajati</a>
+<a class="nav-item nav-link" href="{% url 'delete-employee' %}">Sterge angajat</a>
+<a class="nav-item nav-link" href="{% url 'update-employee' %}">Modificare angajat</a>
+{% block employee-content %}
+<h2>Va rugam sa selectati unul din link urile de mai sus</h2>
+{% endblock employee-content %}
+{% endblock content %}

@@ -1,0 +1,30 @@
+{% extends "main_website/base_statistic.html" %}
+{% block content %}
+{% if user.is_authenticated %}
+    {% for post in posts %}
+        <article class="media content-section">
+          <div class="media-body">
+            <div class="article-metadata">
+              <a class="mr-2" href="#">{{ post.data_publish|date:"F d, Y" }}</a>
+              <small class="text-muted">{{ post.time_publish|time:"G:i" }}</small>
+            </div>
+            <h2><a class="article-title" href="#">{{ post.title }}</a></h2>
+            <p class="article-content">{{ post.content }}</p>
+          </div>
+        </article>
+    {% endfor %}
+{% else %}
+  <p>
+  &nbsp;&nbsp;&nbsp;&nbsp;In choosing the objective of this project I took into account the problems that were around me and solving them with the help of current technology. In particular, the human resources department that uses a lot of documents and paper that is not an aspect attracted my attention just ecological, in addition to this, the distribution of certificates and documents necessary for any human resources process is a cost and a totally unproductive time for any employee of the human resources department time that could be used in the other processes of human resources management employees.
+  </p>
+
+  <p>
+  &nbsp;&nbsp;&nbsp;&nbsp;At the same time, the main user of this project are the companies/companies with a limited number of employees who cannot afford a qualified human resources department and therefore the administration of these documents and certificates would be a burden and an additional cost we need. That is precisely why from the administrator's account it is possible to export and generate word or PDF documents for each employee of the company in the event that user generation is not desired and each user must log in separately, although it is possible for the end user to log in separately to generate any necessary documents. Today we can say that we have a platform that manages both the generation of documents and the generation of users to have access to related documents.
+  </p>
+
+  <p>
+  &nbsp;&nbsp;&nbsp;&nbsp;The problem identified was the creation of documents related to the human resources process manually and the enormous time required to modify and distribute them for both small-sized companies and large companies that want to automate their human resources processes required for processing of documents and certificates therefore we can say that the platform addresses a target group, any commercial company regardless of the number of employees.
+  </p>
+  {%endif%}
+
+{% endblock content %}

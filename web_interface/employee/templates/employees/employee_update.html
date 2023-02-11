@@ -1,0 +1,38 @@
+{% extends 'main_website/base.html' %}
+
+{% block title %}
+    {{ title }} | {{ block.super }}
+{% endblock %}
+
+{% block content %}
+    <div class="col-sm-offset-3 col-sm-6">
+        <h2 class="text-center"><i class="fa fa-user"></i> {{ title }} <a href="{% url 'employees:detail' object.id %}">{{ object.full_name }}</a></h2>
+        <br>
+            {#{% if form.errors.non_field_errors %}#}
+            {#    {{ form.errors.non_field_errors }}#}
+            {#{% endif %}#}
+
+            {#{% if form.errors %}#}
+            {#    {{ form.errors }}#}
+            {#{% endif %}#}
+
+            {% load crispy_forms_tags %}
+
+            <form method="POST" enctype="multipart/form-data" action="" class="form-group">
+                {% csrf_token %}
+            {#    {% crispy form %}#}
+                {{ form.as_p }}
+                <button type="submit" class="btn btn-primary">{{ title }}</button>
+            </form>
+
+            {#{% if form.instance %}#}
+            {#    <h1>{{ form.instance }}</h1>#}
+            {#{% endif %}#}
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    </div>
+{% endblock %}

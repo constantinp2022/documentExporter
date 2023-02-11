@@ -1,0 +1,9 @@
+{% extends "main_website/base.html" %}
+{% block content %}
+    <h2>Ati fost deconectat cu succes!</h2>
+    <div class="border-top pt-3">
+        <small class="text-muted">
+            <a href="{% url 'login' %}">Autentificativa din nou</a>
+        </small>
+    </div>
+{% endblock content %}
