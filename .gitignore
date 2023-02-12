@@ -1,0 +1,11 @@
+# ignore all .pyc files
+*.pyc
+
+#ignore db
+*.sqlite3
+
+#ignore docx
+*.docx
+
+#ignore pdf
+*.pdf
