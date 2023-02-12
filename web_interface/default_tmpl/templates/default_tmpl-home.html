@@ -2,6 +2,10 @@
 
 {% block content %}
 <div class="row">
+	<a class="nav-item nav-link" href="{% url 'default_tmpl:new' %}">New template</a>
+</div>
+
+<div class="row">
 	<form method="POST">
 		{% csrf_token %}
 		<div >{{ form }}</div>

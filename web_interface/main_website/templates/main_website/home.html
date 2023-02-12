@@ -1,18 +1,11 @@
-{% extends "main_website/base_statistic.html" %}
+{% extends "main_website/base.html" %}
 {% block content %}
 {% if user.is_authenticated %}
-    {% for post in posts %}
-        <article class="media content-section">
-          <div class="media-body">
-            <div class="article-metadata">
-              <a class="mr-2" href="#">{{ post.data_publish|date:"F d, Y" }}</a>
-              <small class="text-muted">{{ post.time_publish|time:"G:i" }}</small>
-            </div>
-            <h2><a class="article-title" href="#">{{ post.title }}</a></h2>
-            <p class="article-content">{{ post.content }}</p>
-          </div>
-        </article>
-    {% endfor %}
+    <h1> Welcome {{ user.username }}</h1>
+    <p> Fill your templates is one go.. </p>
+    <p> Check employess tab add a new employee </p>
+    <p> Check Templates </p>
+    <p> Check The blog of the users. </p>
 {% else %}
   <p>
   &nbsp;&nbsp;&nbsp;&nbsp;In choosing the objective of this project I took into account the problems that were around me and solving them with the help of current technology. In particular, the human resources department that uses a lot of documents and paper that is not an aspect attracted my attention just ecological, in addition to this, the distribution of certificates and documents necessary for any human resources process is a cost and a totally unproductive time for any employee of the human resources department time that could be used in the other processes of human resources management employees.

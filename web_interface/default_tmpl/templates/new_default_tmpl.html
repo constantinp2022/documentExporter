@@ -1,0 +1,17 @@
+{% extends "main_website/base.html" %}
+
+{% block content %}
+<div class="row">
+    <h2 class="text-center"><i class="fa fa-file"></i> Add New Template</h2>
+
+    {% load crispy_forms_tags %}
+
+    <form method="POST" enctype="multipart/form-data" action="" class="form-group">
+        {% csrf_token %}
+        {{ template_form.as_p }}
+        <button type="submit" class="btn btn-primary"> Add Template</button>
+    </form>
+
+
+</div>
+{% endblock content %}

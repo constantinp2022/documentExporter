@@ -9,6 +9,7 @@ parentdir = os.path.dirname(currentdir)
 sys.path.insert(0,parentdir)
 
 from employee.models import Employees
+from .models import Default_Templates
 
 
 FORMAT_CHOICES = (
@@ -28,3 +29,9 @@ class DeafaultTemplateForm(forms.ModelForm):
     class Meta:
         model = Employees
         fields = ['employee', 'default_tmpl']
+
+class NewTemplateForm(forms.ModelForm):
+
+    class Meta:
+        model = Default_Templates
+        fields = ['template_name', 'template_file']

@@ -27,7 +27,7 @@ def profile(request):
         if u_form.is_valid() and p_form.is_valid():
             u_form.save()
             p_form.save()
-            messages.success(request, f'Contul a fost actualizat!')
+            messages.success(request, f'Account updated!')
             return redirect('profile')
 
     else:

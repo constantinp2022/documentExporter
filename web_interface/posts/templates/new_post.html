@@ -1,0 +1,18 @@
+{% extends "main_website/base.html" %}
+{% load crispy_forms_tags %}
+{% block content %}
+<div class="row">
+    <h2 class="text-center"><i class="fa fa-message"></i> Add New Message</h2>
+</div>
+<div class="row">
+    
+
+    <form method="POST" enctype="multipart/form-data" action="" class="form-group">
+        {% csrf_token %}
+        {{ new_post_form.as_p }}
+        <button type="submit" class="btn btn-primary"> Add Message</button>
+    </form>
+
+
+</div>
+{% endblock content %}

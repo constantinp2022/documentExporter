@@ -22,9 +22,10 @@ from django.urls import path
 from employee import views as employee_views
 from user import views as user_view
 from main_website import views as main_view
+from posts import views as main_post
 
 urlpatterns = [
-    path('', main_view.home, name="home"),
+    path('', main_view.home, name='home'),
     path('register/',user_view.register, name='register'),
     path('profile/',user_view.profile, name='profile'),
     path('admin/', admin.site.urls),
@@ -35,6 +36,7 @@ urlpatterns = [
     path('about/', main_view.about, name='about'),
     path('employees/', include(('employee.urls', 'employees'), namespace='employees')),
     path('default_tmpl/', include(('default_tmpl.urls', 'default_tmpl'), namespace='default_tmpl')),
+    path('posts/', include(('posts.urls', 'posts'), namespace='posts')),
 ]
 
 if settings.DEBUG:

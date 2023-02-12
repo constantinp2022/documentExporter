@@ -1,7 +1,10 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.conf import settings
-from .forms import DeafaultTemplateForm
+from django.db.models import F
+from django.contrib import messages
+from .forms import DeafaultTemplateForm, NewTemplateForm
 from .models import Default_Templates
+from user.models import Profile
 from io import BytesIO
 import sys
 import subprocess
@@ -54,7 +57,14 @@ def default_tmpl_home(request):
             docx_title = 'generated_document' + '.docx'
             pdf_title = 'generated_document' + '.pdf'
 
-            template = DocxTemplate(settings.BASE_DIR +  '/default_tmpl/templates/default_tmpl/' + default_tmpl.template_path)
+            # Update the number of documents exported
+            logged_user = request.user
+            logged_profile = Profile.objects.get(user_id=logged_user.id)
+            logged_profile.nr_documents = logged_profile.nr_documents + 1
+            logged_profile.save()
+
+            # Take the template
+            template = DocxTemplate(default_tmpl.template_file.path)
 
             template.render(context_data)
 
@@ -74,9 +84,9 @@ def default_tmpl_home(request):
                 response['Content-Length'] = length
                 return response
             if doctype == 'pdf':
-                convert_to(settings.BASE_DIR + '/default_tmpl/templates/default_tmpl/','document-generat.docx')
+                convert_to(settings.BASE_DIR + '/media/wip/','document-generat.docx')
 
-                file = open(settings.BASE_DIR + '/default_tmpl/templates/default_tmpl/' + 'document-generat.pdf', "rb")
+                file = open(settings.BASE_DIR + '/media/wip/' + 'document-generat.pdf', "rb")
                 f = BytesIO(file.read())
 
                 length = f.tell()
@@ -92,10 +102,29 @@ def default_tmpl_home(request):
     else:
         form = DeafaultTemplateForm()
 
-    template_name = "default_tmpl/default_tmpl-home.html"
+    template_name = "default_tmpl-home.html"
     context = {
         'form': form,
         'employee': employee,
         'default_tmpl': default_tmpl,
     }
     return render(request, template_name, context)
+
+
+def new_default_tmpl(request):
+    if request.method == 'POST':
+        template_form = NewTemplateForm(request.POST,
+                                    request.FILES)
+        if  template_form.is_valid():
+            template_form.save()
+            messages.success(request, f'Template stored!')
+            return redirect('default_tmpl:home')
+
+    else:
+        template_form = NewTemplateForm()
+
+    context = {
+        'template_form': template_form,
+    }
+
+    return render(request, "new_default_tmpl.html", context)
