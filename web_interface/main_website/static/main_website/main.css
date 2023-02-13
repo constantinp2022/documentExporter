@@ -1,11 +1,12 @@
+/* Choose pallette E9F8F9 BG(LIGHT) C0EEF2 ITEMS (LIGHT DIMMED) 181823(Black) 537FE7 (Blue)*/
 body {
-  background: #ffa500;
-  color: #333333;
+  background: #E9F8F9;
+  color: #181823;
   margin-top: 5rem;
 }
 
 h1, h2, h3, h4, h5, h6 {
-  color: #444444;
+  color: #181823;
 }
 
 ul {
@@ -13,30 +14,54 @@ ul {
 }
 
 .bg-orange {
-  background-color: #ffd700;
+  background-color: #537FE7;
 }
 
 .site-header .navbar-nav .nav-link {
-  color: #000000;
+  color: #181823;
 }
 
 .site-header .navbar-nav .nav-link:hover {
   color: #ffffff;
+  text-decoration: underline white;
 }
 
 .site-header .navbar-nav .nav-link.active {
   font-weight: 500;
 }
 
+.navbar-brand a{
+  color: black;
+
+}
 
 .navbar-nav-right{
-  background: #ffffff;
+  background: #C0EEF2;
   padding: 10px 20px;
   border: 1px solid #dddddd;
   border-radius: 3px;
   margin-bottom: 20px;
 }
 
+.new-button {
+  background: #C0EEF2;
+  padding: 5px 5px;
+  border: 2px solid #537FE7;
+  border-radius: 3px;
+  margin-bottom: 20px;
+}
+
+.new-button a{
+  color: black;
+  font-weight: bold;
+
+}
+
+.new-button a:hover{
+  color: #537FE7;
+  text-decoration: underline #537FE7;
+  
+}
 .content-section {
   background: #ffffff;
   padding: 10px 20px;
@@ -45,20 +70,28 @@ ul {
   margin-bottom: 20px;
 }
 .sidebar{
-  background: #0000ff;
+  background: #C0EEF2;
 }
 
 .sidebar h3,
 .sidebar p {
-  color: #ffffff;
+  color: #000000;
+}
+.sidebar h3:hover{
+  text-decoration: underline black;
 }
 
+.sidebar li:hover {
+  text-decoration: underline rgb(0, 0, 0);
+}
+
+
 .article-title {
-  color: #444444;
+  color: #181823;
 }
 
 a.article-title:hover {
-  color: #428bca;
+  color: #537FE7;
   text-decoration: none;
 }
 
@@ -104,7 +137,7 @@ a.article-title:hover {
 .sidenav {
   height: 500px; /* 100% Full-height */
   width: 200px;
-  background-color: #808080; /* Black*/
+  background: #C0EEF2;
   overflow-x: hidden; /* Disable horizontal scroll */
 }
 
@@ -113,10 +146,11 @@ a.article-title:hover {
   padding: 8px 8px 8px 8px;
 
   font-size: 25px;
-  color: #000000;
+  color: #181823;
 }
 
 /* When you mouse over the navigation links, change their color */
 .sidenav a:hover {
-  color: #f1f1f1;
+  color: #537FE7;
+  text-decoration: underline #537FE7;
 }

@@ -2,9 +2,16 @@
 
 {% block content %}
 <div class="row">
-	<a class="nav-item nav-link" href="{% url 'default_tmpl:new' %}">New template</a>
+    <div class="new-button">
+		<a class="nav-item nav-link" href="{% url 'default_tmpl:new' %}">New template</a>
+	</div>
 </div>
 
+<hr />
+
+<div class="row">
+	 <h2> Generate a new document</h2>
+</div>
 <div class="row">
 	<form method="POST">
 		{% csrf_token %}
