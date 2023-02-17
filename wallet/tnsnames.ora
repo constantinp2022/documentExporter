@@ -1,0 +1,12 @@
+djangodbtest501_high = (description= (retry_count=20)(retry_delay=3)(address=(protocol=tcps)(port=1522)(host=adb.eu-frankfurt-1.oraclecloud.com))(connect_data=(service_name=g4c976fc4ed396b_djangodbtest501_high.adb.oraclecloud.com))(security=(ssl_server_dn_match=yes)))
+
+djangodbtest501_low = (description= (retry_count=20)(retry_delay=3)(address=(protocol=tcps)(port=1522)(host=adb.eu-frankfurt-1.oraclecloud.com))(connect_data=(service_name=g4c976fc4ed396b_djangodbtest501_low.adb.oraclecloud.com))(security=(ssl_server_dn_match=yes)))
+
+djangodbtest501_medium = (description= (retry_count=20)(retry_delay=3)(address=(protocol=tcps)(port=1522)(host=adb.eu-frankfurt-1.oraclecloud.com))(connect_data=(service_name=g4c976fc4ed396b_djangodbtest501_medium.adb.oraclecloud.com))(security=(ssl_server_dn_match=yes)))
+
+djangodbtest501_tp = (description= (retry_count=20)(retry_delay=3)(address=(protocol=tcps)(port=1522)(host=adb.eu-frankfurt-1.oraclecloud.com))(connect_data=(service_name=g4c976fc4ed396b_djangodbtest501_tp.adb.oraclecloud.com))(security=(ssl_server_dn_match=yes)))
+
+djangodbtest501_tpurgent = (description= (retry_count=20)(retry_delay=3)(address=(protocol=tcps)(port=1522)(host=adb.eu-frankfurt-1.oraclecloud.com))(connect_data=(service_name=g4c976fc4ed396b_djangodbtest501_tpurgent.adb.oraclecloud.com))(security=(ssl_server_dn_match=yes)))
+
+
+
